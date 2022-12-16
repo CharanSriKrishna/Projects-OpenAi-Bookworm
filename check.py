@@ -5,7 +5,7 @@ import os
 from gtts import gTTS
 from PIL import Image
 
-openai.api_key =api_key
+openai.api_key =st.secrets["api_key"]
 
 st.title("BOOKWORM")
 st.header("""
