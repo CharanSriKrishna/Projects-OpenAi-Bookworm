@@ -113,11 +113,9 @@ def choser(text):
   prompt=""
   if(type1=="concept"):
     st.write("Concept of the passage : ")
-    st.write(text)
     prompt=generate_prompt(text,"concept")
   else:
-    st.write("Concept of the passage : ")
-    st.write(text)
+    st.write("KeyPoints of the passage : ")
     prompt=generate_prompt(text,"keypoints")
   return prompt
 
@@ -126,6 +124,7 @@ def result_show(text,i):
   if(type1=="text"):
     st.write(text)
   else:
+    st.write(text)
     Text_voice(text,i)
 
 
@@ -144,14 +143,14 @@ if(type=="image Generation"):
       st.write("Person's Description : ")
       st.write(prompt)
       prompt=filter_description(prompt)
-      st.write(prompt)
+      #st.write(prompt)
     else:
       text=st.text_input("Enter the text below : ")
       st.subheader("Your input : ")
       st.write(text)
       prompt=generate_prompt(text,"place")
       prompt=description(prompt)
-      st.write("Person's Description : ")
+      st.write("Place's Description : ")
       st.write(prompt)
       prompt=filter_description1(prompt)
     st.write("The Image : ")
